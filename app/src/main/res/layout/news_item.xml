@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/story_title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="How to automatically create images for Responsive design" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:layout_below="@id/story_title"
+            tools:text="danno" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_dash_image"
+            android:layout_toEndOf="@id/author"
+            android:paddingHorizontal="2dp"
+            android:layout_below="@id/story_title"
+            android:src="@drawable/ic_dash" />
+
+
+        <TextView
+            android:id="@+id/created_at"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:layout_below="@id/story_title"
+            android:layout_toEndOf="@+id/new_dash_image"
+            tools:text="25m" />
+
+    </RelativeLayout>
+</layout>

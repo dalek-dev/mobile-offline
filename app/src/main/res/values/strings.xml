@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">offlinemobile</string>
+    <string name="news_empty_view">No news at the moment</string>
+</resources>
