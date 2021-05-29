@@ -1,11 +1,12 @@
-package com.example.offlinemobile
+package com.example.offlinemobile.view.holder
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.offlinemobile.api.ApiResponseStatus
-import com.example.offlinemobile.api.News
-import com.example.offlinemobile.database.getDatabase
+import com.example.offlinemobile.repository.MainRepository
+import com.example.offlinemobile.room.News
+import com.example.offlinemobile.room.getDatabase
 import kotlinx.coroutines.launch
 import java.net.UnknownHostException
 
@@ -27,11 +28,30 @@ class MainViewModel(application: Application):AndroidViewModel(application) {
                 _status.value = ApiResponseStatus.LOADING
                 repository.fetchNews()
                 _status.value = ApiResponseStatus.DONE
-            }catch (e: UnknownHostException){
+            } catch (e: UnknownHostException) {
                 _status.value = ApiResponseStatus.ERROR
-                Log.d("","No internet conection")
+                Log.d("LOGCATT", "No internet conection")
             }
         }
+
     }
 
+    fun deleteAllItems() = viewModelScope.launch {
+        repository.deleteAll()
+    }
+
+    fun deleteItem(news: News) = viewModelScope.launch {
+        repository.deleteItemNew(news)
+    }
+
+    fun refreshNews () = viewModelScope.launch{
+        try {
+            _status.value = ApiResponseStatus.LOADING
+            repository.fetchNews()
+            _status.value = ApiResponseStatus.DONE
+        } catch (e: UnknownHostException) {
+            _status.value = ApiResponseStatus.ERROR
+            Log.d("LOGCATT", "No internet conection")
+        }
+    }
 }

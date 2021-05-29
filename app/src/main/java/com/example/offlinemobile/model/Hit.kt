@@ -1,4 +1,4 @@
-package com.example.offlinemobile.api
+package com.example.offlinemobile.model
 
 import com.squareup.moshi.Json
 

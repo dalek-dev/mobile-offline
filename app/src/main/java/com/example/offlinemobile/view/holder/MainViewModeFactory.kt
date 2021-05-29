@@ -1,4 +1,4 @@
-package com.example.offlinemobile
+package com.example.offlinemobile.view.holder
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

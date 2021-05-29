@@ -1,4 +1,4 @@
-package com.example.offlinemobile.api
+package com.example.offlinemobile.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,8 +1,7 @@
-package com.example.offlinemobile.database
+package com.example.offlinemobile.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.offlinemobile.api.News
 
 @Dao
 interface NewsDao {
@@ -15,6 +14,11 @@ interface NewsDao {
     @Update
     fun updateNew(vararg news: News)
 
-    @Delete
-    fun deleteNew(vararg news: News)
+    @Query("DELETE FROM news WHERE objectID = :id")
+    fun deleteNew(vararg id: String)
+
+    @Query("DELETE from news")
+    fun deleteAllNews()
+
+
 }
